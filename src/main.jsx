@@ -1,6 +1,6 @@
 
 import { createRoot } from 'react-dom/client'
-import Home from "./landing_page/Home/Home_page";
+
 import "./index.css";
 import {BrowserRouter,Routes,Route} from "react-router-dom";
 // import Signup from "./landing_page/signup/Signup";
