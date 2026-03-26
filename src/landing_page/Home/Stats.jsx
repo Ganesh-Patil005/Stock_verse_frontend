@@ -25,7 +25,7 @@ export default function Stats (){
                 <div className="col-6 mt-5 ">
                       <img src="media/ecosystem.png" alt="Ecosysytem"style={{width:"90%"}}/>
                       <div>
-                        <a href="" className="mx-5" style={{textDecoration:"none"}}>Explore our products<i class="fa-solid fa-arrow-right-long"></i></a>
+                        <a href="" className="mx-5" style={{textDecoration:"none"}}>Explore our products<i className="fa-solid fa-arrow-right-long"></i></a>
                         <a href="" style={{textDecoration:"none"}}>Try kite</a>
                       </div>
                 </div>
