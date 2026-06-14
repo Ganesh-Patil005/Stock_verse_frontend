@@ -14,7 +14,7 @@ export default function Stats (){
                         <p className="text-muted "> No gimmisicks,spam,"gamifaction",or annoying push notifications.High quality apps use it in the way you like.</p>
                     </div>
                     <div className="mt-4">
-                        <h3  className="fs-5">The Zerodha Universe</h3>
+                        <h3  className="fs-5">The StcokVerse Universe</h3>
                         <p className="text-muted ">Not just in an app,but whole ecosystem. Our investments in 30+ fintch startups offer u tailered services specific to you needs.</p>
                     </div>
                     <div className="mt-4">

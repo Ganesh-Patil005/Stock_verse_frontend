@@ -17,7 +17,7 @@ export default function Team() {
           <div className="col-6">
             <h1 className="fs-4 pb-5 ml-5">People</h1>
             <p>
-              Nithin bootstrapped and founded Zerodha in 2010 to overcome the
+              Nithin bootstrapped and founded StockVerse in 2010 to overcome the
               hurdles he faced during his decade long stint as a trader. Today,
               Zerodha has changed the landscape of the Indian broking industry.
             </p>

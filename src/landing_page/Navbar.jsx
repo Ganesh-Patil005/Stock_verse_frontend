@@ -26,7 +26,7 @@ export default function Navbar() {
 
       const { status } = data;
       if (status) {
-        window.open("http://localhost:5173", "_blank");
+         window.location.href  = "http://localhost:5173";
       } else {
         removeCookie("token");
         alert("session expired login first");
@@ -50,9 +50,9 @@ export default function Navbar() {
       className="navbar navbar-expand-lg border-bottom"
       style={{ backgroundColor: "#fff" }}
     >
-      <div className="container">
+      <div className="container" style={{marginLeft:"4rem"}}>
         <Link className="navbar-brand" to={"/"}>
-          <img src="media/logo3.png" style={{ width: "25%" }} alt="Logo" />
+          <div ><img src="media/logo3.png" style={{ width: "25%", }} alt="Logo" /></div>
         </Link>
         <button
           className="navbar-toggler"

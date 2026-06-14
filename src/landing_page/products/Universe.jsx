@@ -3,7 +3,7 @@ export default function Universe() {
   return (
     <div className="container">
       <div>
-        <h1 className="text-center text-muted fs-3">The Zerodha Universe</h1>
+        <h1 className="text-center text-muted fs-3">The StcokVerse Universe</h1>
         <p className="text-center text-muted mt-3">
           Extend your trading and investment experience even further with our
           partner platforms

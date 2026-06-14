@@ -9,6 +9,7 @@ import Navbar from './landing_page/Navbar';
 import Footer from './landing_page/Footer';
 import NotFound from './landing_page/Notfound';
 import  Login  from './landing_page/login/Login';
+import InvestmentOff from "./landing_page/products/InvestMent";
 
 
 export default function App(){
@@ -25,6 +26,7 @@ return(
   <Route path='/product' element={<Product/>}></Route>
   <Route path='/about' element={<About/>}></Route>
   <Route path='/login' element = {<Login/>} ></Route>
+  <Route path="/investMent" element={<InvestmentOff/>} ></Route>
    <Route path='*' element={<NotFound/>}></Route>
 </Routes>
  <Footer />
