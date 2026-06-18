@@ -31,7 +31,7 @@ export default function Login(){
     e.preventDefault();
     try {
       const { data } = await axios.post(
-        "http://localhost:3002/login",
+        "https://stock-verse-backend-1.onrender.com/login",
         {
           ...inputValue,
         },

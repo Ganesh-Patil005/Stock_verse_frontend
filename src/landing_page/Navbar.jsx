@@ -19,14 +19,14 @@ export default function Navbar() {
       }
 
       const { data } = await axios.post(
-        "http://localhost:3002",
+        "https://stock-verse-backend-1.onrender.com",
         {},
         { withCredentials: true }
       );
 
       const { status } = data;
       if (status) {
-         window.location.href  = "http://localhost:5173";
+         window.location.href  = "https://stock-verse-dashboard-blush.vercel.app";
       } else {
         removeCookie("token");
         alert("session expired login first");
