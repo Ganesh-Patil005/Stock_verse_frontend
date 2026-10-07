@@ -1,49 +1,100 @@
+// import { Link, useNavigate } from "react-router-dom";
+// import { useState } from "react";
+// import { useCookies } from "react-cookie";
+// import axios from "axios";
+
+// export default function Navbar() {
+//   const navigate = useNavigate();
+//   const [cookies, removeCookie] = useCookies([]);
+ 
+//   const [isLoading, setIsLoading] = useState(false);
+//   const handleDashboard = async (e) => {
+//     e.preventDefault();
+//     setIsLoading(true);
+
+//     try {
+//       if (!cookies.token) {
+//         alert("u have to login");
+//         navigate("/login");
+//       }
+
+//       const { data } = await axios.post(
+//         "https://stock-verse-backend-1.onrender.com",
+//         {},
+//         { withCredentials: true }
+//       );
+
+//       const { status } = data;
+//       if (status) {
+//          window.location.href  = "https://stock-verse-dashboard-blush.vercel.app";
+//       } else {
+//         removeCookie("token");
+//         alert("session expired login first");
+//         navigate("/login");
+//       }
+//     } catch (err) {
+//       console.log(err);
+//     } finally {
+//       setIsLoading(false);
+//     }
+//   };
+
+//   const handleLogout = () => {
+//     removeCookie("token");
+//     alert("You Have loged out");
+//     navigate("/login");
+//   };
 import { Link, useNavigate } from "react-router-dom";
 import { useState } from "react";
-import { useCookies } from "react-cookie";
 import axios from "axios";
+
+const API_URL = "https://stock-verse-backend-1.onrender.com";
+const DASHBOARD_URL = "https://stock-verse-dashboard-blush.vercel.app";
 
 export default function Navbar() {
   const navigate = useNavigate();
-  const [cookies, removeCookie] = useCookies([]);
- 
   const [isLoading, setIsLoading] = useState(false);
+
   const handleDashboard = async (e) => {
     e.preventDefault();
+    const token = localStorage.getItem("token");
+
+    if (!token) {
+      alert("You have to login");
+      navigate("/login");
+      return;
+    }
+
     setIsLoading(true);
-
     try {
-      if (!cookies.token) {
-        alert("u have to login");
-        navigate("/login");
-      }
-
       const { data } = await axios.post(
-        "https://stock-verse-backend-1.onrender.com",
+        API_URL,
         {},
-        { withCredentials: true }
+        { headers: { Authorization: `Bearer ${token}` } }
       );
 
-      const { status } = data;
-      if (status) {
-         window.location.href  = "https://stock-verse-dashboard-blush.vercel.app";
+      if (data.status) {
+        window.location.href = `${DASHBOARD_URL}/?token=${encodeURIComponent(token)}`;
       } else {
-        removeCookie("token");
-        alert("session expired login first");
+        localStorage.removeItem("token");
+        alert("Session expired, login first");
         navigate("/login");
       }
     } catch (err) {
       console.log(err);
+      alert("Could not reach the server. Try again in a moment.");
     } finally {
       setIsLoading(false);
     }
   };
 
-  const handleLogout = () => {
-    removeCookie("token");
-    alert("You Have loged out");
+  const handleLogout = (e) => {
+    e.preventDefault();
+    localStorage.removeItem("token");
+    alert("You have logged out");
     navigate("/login");
   };
+
 
   return (
     <nav
