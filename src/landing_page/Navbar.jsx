@@ -1,49 +1,4 @@
-// import { Link, useNavigate } from "react-router-dom";
-// import { useState } from "react";
-// import { useCookies } from "react-cookie";
-// import axios from "axios";
 
-// export default function Navbar() {
-//   const navigate = useNavigate();
-//   const [cookies, removeCookie] = useCookies([]);
- 
-//   const [isLoading, setIsLoading] = useState(false);
-//   const handleDashboard = async (e) => {
-//     e.preventDefault();
-//     setIsLoading(true);
-
-//     try {
-//       if (!cookies.token) {
-//         alert("u have to login");
-//         navigate("/login");
-//       }
-
-//       const { data } = await axios.post(
-//         "https://stock-verse-backend-1.onrender.com",
-//         {},
-//         { withCredentials: true }
-//       );
-
-//       const { status } = data;
-//       if (status) {
-//          window.location.href  = "https://stock-verse-dashboard-blush.vercel.app";
-//       } else {
-//         removeCookie("token");
-//         alert("session expired login first");
-//         navigate("/login");
-//       }
-//     } catch (err) {
-//       console.log(err);
-//     } finally {
-//       setIsLoading(false);
-//     }
-//   };
-
-//   const handleLogout = () => {
-//     removeCookie("token");
-//     alert("You Have loged out");
-//     navigate("/login");
-//   };
 import { Link, useNavigate } from "react-router-dom";
 import { useState } from "react";
 import axios from "axios";
